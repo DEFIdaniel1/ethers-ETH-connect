@@ -26,9 +26,9 @@ const checkContract = async () => {
     const totalSupply = await daiContract.totalSupply()
     const balanceOf = await daiContract.balanceOf('0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8')
 
-    console.log(`Reading Contract: ${name}`)
+    console.log(`\nReading Contract: ${name}`)
     console.log(`Token Symbol: ${symbol}`)
     console.log(`Total Token Supply: ${ethers.utils.formatUnits(totalSupply, 18)}`) //18 decimals need to be added
-    console.log(`Token Balance of Selected Address: ${balanceOf.toString()}`)
+    console.log(`Token Balance of Selected Address: ${balanceOf.toString()}\n`)
 }
 checkContract()
