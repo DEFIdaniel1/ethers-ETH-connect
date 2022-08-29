@@ -24,11 +24,11 @@ const checkContract = async () => {
     const name = await daiContract.name()
     const symbol = await daiContract.symbol()
     const totalSupply = await daiContract.totalSupply()
-    const balanceOf = await daiContract.balanceOf('0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8')
+    const balanceOf = await daiContract.balanceOf('0xc2eef96d563c26165d9b97c2622a923e8b532a27')
 
     console.log(`\nReading Contract: ${name}`)
     console.log(`Token Symbol: ${symbol}`)
     console.log(`Total Token Supply: ${ethers.utils.formatUnits(totalSupply, 18)}`) //18 decimals need to be added
-    console.log(`Token Balance of Selected Address: ${balanceOf.toString()}\n`)
+    console.log(`Token Balance of Selected Address: ${ethers.utils.formatEther(balanceOf)}\n`) //if 18 decimals, can just use formatEther
 }
 checkContract()
