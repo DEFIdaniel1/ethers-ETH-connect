@@ -1,10 +1,8 @@
 const { ethers } = require('ethers')
 require('dotenv').config()
-const ALCHEMY_ETH_API = process.env.ALCHEMY_ETH_API
+const ALCHEMY_ETH_URL = process.env.ALCHEMY_ETH_URL
 
-const provider = new ethers.providers.JsonRpcProvider(
-    `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_ETH_API}`
-)
+const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_ETH_URL)
 
 const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 // 2 methods to get the contract ABI - one is to copy/paste it from etherscan and import

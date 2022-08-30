@@ -30,6 +30,7 @@ const writeToContract = async () => {
     const sendTx = await connectedContract.transfer(
         ACCOUNT_ADDRESS_2,
         ethers.utils.parseUnits('1', 18) // could also use parseEther - 18 is decimals
+        // To SEND ALL, can write 'balance'
     )
     await sendTx.wait()
     console.log(sendTx)
