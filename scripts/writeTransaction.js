@@ -3,9 +3,9 @@ require('dotenv').config()
 const ALCHEMY_GOERLI_URL = process.env.ALCHEMY_GOERLI_URL
 
 const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_GOERLI_URL)
-const account1 = '0xD1D09E08d992Ada366A528c08af5576AC61d1941'
-const account1PrivateKey = process.env.ACCOUNT1_PRIVATE_KEY
-const account2 = '0x1136a05458d23a3852367C9A792032B32B313A0A'
+const account1 = process.env.ACCOUNT_ADDRESS_1
+const account1PrivateKey = process.env.ACCOUNT_PRIVATE_KEY_1
+const account2 = process.env.ACCOUNT_ADDRESS_2
 
 const wallet = new ethers.Wallet(account1PrivateKey, provider) // create a wallet (just like metamask) to interact with blockchain
 
@@ -18,7 +18,7 @@ const writeTransaction = async () => {
     // Send Ether
     const sendTx = await wallet.sendTransaction({
         to: account2,
-        value: ethers.utils.parseEther('0.3'),
+        value: ethers.utils.parseEther('0.1'),
     })
 
     //Wait for tx to be mined
